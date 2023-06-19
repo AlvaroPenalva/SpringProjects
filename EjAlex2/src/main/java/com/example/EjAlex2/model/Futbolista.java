@@ -1,15 +1,21 @@
 package com.example.EjAlex2.model;
 
-import lombok.AllArgsConstructor;
+import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Entity
+@Table(name = "futbolistas")
 public class Futbolista {
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name = "id_futbolista")
+    private Integer id;
     private String nombre;
     private String nacionalidad;
     private Integer edad;
-    private String equipo;
+    @ManyToOne
+    @JoinColumn(name = "equipo", referencedColumnName = "id_equipo", updatable = true, insertable = true)
+    private Equipo equipo;
 }

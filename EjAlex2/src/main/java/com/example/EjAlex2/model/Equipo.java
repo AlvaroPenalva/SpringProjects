@@ -1,23 +1,16 @@
 package com.example.EjAlex2.model;
 
-import lombok.AllArgsConstructor;
+import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import java.util.ArrayList;
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Entity
+@Table(name = "equipos")
 public class Equipo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_equipo")
+    private Integer id;
     private String nombre;
     private String ciudad;
-    private ArrayList<Futbolista> jugadores;
-
-    public void aniadirJugador(Futbolista f){
-        jugadores.add(f);
-    }
-    public void eliminarJugador(Futbolista f){
-        for(int i = 0; i < jugadores.size(); ++i){
-            if(jugadores.get(i).getNombre().equals(f.getNombre())) jugadores.remove(i);
-        }
-    }
 }

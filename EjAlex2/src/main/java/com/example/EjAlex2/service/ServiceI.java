@@ -5,17 +5,12 @@ import com.example.EjAlex2.model.Futbolista;
 
 import java.util.List;
 
-public interface ServiceI {
+public interface ServiceI<T> {
 
-    public Integer createFutbolista(Futbolista futbolista);
-    public Futbolista readFutbolista(Integer id);
-    public List<Futbolista> readFutbolistas();
-    public Integer updateFutbolista(Integer id, Futbolista futbolista);
-    public Futbolista deleteFutbolista(Integer id);
+    Integer create(T element);
+    T read(Integer id);
+    List<T> list();
+    Integer update(Integer id, T element);
+    Boolean delete(Integer id);
 
-    public Integer createEquipo(Equipo equipo);
-    public Equipo readEquipo(Integer id);
-    public List<Equipo> readEquipos();
-    public Integer updateEquipo(Integer id, Equipo equipo);
-    public Equipo deleteEquipo(Integer id);
 }
