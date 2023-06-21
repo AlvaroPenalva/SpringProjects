@@ -1,15 +1,13 @@
 package com.example.EjAlex2.model;
 
-import jakarta.persistence.*;
-import lombok.Builder;
+import javax.persistence.*;
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "futbolistas")
 public class Futbolista {
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_futbolista")
     private Integer id;
     private String nombre;

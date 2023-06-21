@@ -1,11 +1,10 @@
 package com.example.EjAlex2.model;
 
-import jakarta.persistence.*;
-import lombok.Builder;
 import lombok.Data;
+import javax.persistence.*;
+
 @Data
 @Entity
-@Table(name = "equipos")
 public class Equipo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
